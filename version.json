@@ -1,34 +1,34 @@
 {
   "versionCode": 577,
   "versionName": "0.13.21",
-  "date": "2026-11-17 15:26",
+  "date": "2026-11-17 16:00",
   "changes": [
+    "修 release 日志检查：给 okhttp 的 1 处 android.util.Log 开配额",
+    "内置 catvod 运行库，让 jar 站点真能跑（接口型站点已闭环）",
+    "com.github.catvod.crawler.Spider：init(Context)/init(Context,String)/homeContent/categoryContent/detailContent/…",
+    "com.github.catvod.crawler.SpiderDebug：log(String)/log(Throwable)。",
+    "com.github.catvod.debug.{MainActivity,DanmakuDialogTestActivity,DmghgProbeActivity}：只有 spider/merge/** 会回调…",
+    "okhttp 3.12.13",
+    "gson 2.10.1",
     "升版本到 0.13.21 (577)",
     "脚本框架：频道/分类/EPG 宿主 API、pushList、defer 异步、image 构造器坐标修复",
-    "TVBox spider.jar 加载器",
-    "示例脚本：tvbox.js（三栏 + 详情页 + 选集 + 加载中）、vod-picker.js 修复",
-    "文档：脚本开发指南 + starter.js 模板",
-    "补文档：脚本开发指南 + 模板 starter.js + 文档索引",
-    "docs/脚本开发指南.md：心智模型（layer 是纯渲染、3 秒超时、state 驱动）、图元速查、五个必踩的坑（bg vs fg、id、默认居中、radius 单位、image 参数）…",
-    "sample-scripts/views/starter.js：130 行带注释的最小完整例子（浮球 → 面板 → 虚拟列表 → 遥控导航 → defer 异步拉数据），复制改名即可开工。",
-    "docs/README.md：按\"我想干什么\"索引。",
-    "TVBox 面板：详情页返回上一页、剧集网格按行跳"
+    "TVBox spider.jar 加载器"
   ],
   "history": [
     {
       "version": "0.13.21",
-      "date": "2026-11-17 15:26",
+      "date": "2026-11-17 16:00",
       "changes": [
+        "修 release 日志检查：给 okhttp 的 1 处 android.util.Log 开配额",
+        "内置 catvod 运行库，让 jar 站点真能跑（接口型站点已闭环）",
+        "com.github.catvod.crawler.Spider：init(Context)/init(Context,String)/homeContent/categoryContent/detailContent/…",
+        "com.github.catvod.crawler.SpiderDebug：log(String)/log(Throwable)。",
+        "com.github.catvod.debug.{MainActivity,DanmakuDialogTestActivity,DmghgProbeActivity}：只有 spider/merge/** 会回调…",
+        "okhttp 3.12.13",
+        "gson 2.10.1",
         "升版本到 0.13.21 (577)",
         "脚本框架：频道/分类/EPG 宿主 API、pushList、defer 异步、image 构造器坐标修复",
-        "TVBox spider.jar 加载器",
-        "示例脚本：tvbox.js（三栏 + 详情页 + 选集 + 加载中）、vod-picker.js 修复",
-        "文档：脚本开发指南 + starter.js 模板",
-        "补文档：脚本开发指南 + 模板 starter.js + 文档索引",
-        "docs/脚本开发指南.md：心智模型（layer 是纯渲染、3 秒超时、state 驱动）、图元速查、五个必踩的坑（bg vs fg、id、默认居中、radius 单位、image 参数）…",
-        "sample-scripts/views/starter.js：130 行带注释的最小完整例子（浮球 → 面板 → 虚拟列表 → 遥控导航 → defer 异步拉数据），复制改名即可开工。",
-        "docs/README.md：按\"我想干什么\"索引。",
-        "TVBox 面板：详情页返回上一页、剧集网格按行跳"
+        "TVBox spider.jar 加载器"
       ]
     }
   ],

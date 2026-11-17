@@ -1,8 +1,9 @@
 {
-  "versionCode": 586,
-  "versionName": "0.13.30",
-  "date": "2026-11-17 20:20",
+  "versionCode": 587,
+  "versionName": "0.13.31",
+  "date": "2026-11-17 20:35",
   "changes": [
+    "渲染层五项性能修复 + 模块热更新（0.13.31）",
     "脚本模块化 + 框架三处性能/正确性修复（0.13.30）",
     "require 支持 scripts 根路径",
     "modal：面板打开时吞掉所有触摸",
@@ -11,14 +12,14 @@
     "点播脚本拆成模块",
     "补齐频道增删改查原语；抽公共写入实现；点播整组替换 + 自动播放",
     "增删改查补齐",
-    "appendChannels(group, items)          追加，同名（name 完全相同）替换",
-    "updateChannel(group, name, patch)     改单条：patch 只写要改的字段"
+    "appendChannels(group, items)          追加，同名（name 完全相同）替换"
   ],
   "history": [
     {
-      "version": "0.13.30",
-      "date": "2026-11-17 20:20",
+      "version": "0.13.31",
+      "date": "2026-11-17 20:35",
       "changes": [
+        "渲染层五项性能修复 + 模块热更新（0.13.31）",
         "脚本模块化 + 框架三处性能/正确性修复（0.13.30）",
         "require 支持 scripts 根路径",
         "modal：面板打开时吞掉所有触摸",
@@ -27,8 +28,7 @@
         "点播脚本拆成模块",
         "补齐频道增删改查原语；抽公共写入实现；点播整组替换 + 自动播放",
         "增删改查补齐",
-        "appendChannels(group, items)          追加，同名（name 完全相同）替换",
-        "updateChannel(group, name, patch)     改单条：patch 只写要改的字段"
+        "appendChannels(group, items)          追加，同名（name 完全相同）替换"
       ]
     }
   ],

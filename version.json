@@ -1,34 +1,34 @@
 {
-  "versionCode": 581,
-  "versionName": "0.13.25",
-  "date": "2026-11-17 17:06",
+  "versionCode": 582,
+  "versionName": "0.13.26",
+  "date": "2026-11-17 18:24",
   "changes": [
+    "紧急修：find() 自我递归导致一启动就崩（StackOverflowError）",
+    "点播脚本：关键路径写脚本日志，出事不用猜",
+    "runJob：开始/结束各一条（能看出后台任务到底跑没跑起来 —— 上次卡「加载中」就是因为没跑，日志里一看就明白）",
+    "getJson：请求异常/非 2xx 时记下 URL 和状态码",
+    "三个 do*：缺 class 字段 / 缺 list 字段（带 tid、pg）/ 没有可播地址（带 vod_play_url 前 120 字）",
     "修「一直卡在加载中」：refresh/defer 的脚本名根本对不上",
     "ScriptLayerManager 注册图层用的 key 是 \"views/vod-picker.js\"，而 ScriptEngine 里拿的是 File.getName() 即 \"vod-picker.js\"；",
     "refresh→ active.get(\"vod-picker.js\") == null → **什么都不做，也不报错**；",
     "于是脚本里 defer('vdRun') 的后台任务永远不会跑，busy 停在 true，界面就一直转圈；refresh() 同理无效。",
-    "ScriptEngine 增加 sink：reloadSink / deferSink，由 Controller 构造时注入（e.setSinks(this::reload, this::deferJob)）…",
-    "ScriptLayerManager 增加 find()：精确 → \"views/\"+name → endsWith 三级兜底，",
-    "点播首页重做：海报网格（不再是三栏）+ 每个脚本一份日志文件",
-    "UI：三栏 → 海报网格",
-    "全屏压暗 + 顶栏",
-    "分类 chips 横排"
+    "ScriptEngine 增加 sink：reloadSink / deferSink，由 Controller 构造时注入（e.setSinks(this::reload, this::deferJob)）…"
   ],
   "history": [
     {
-      "version": "0.13.25",
-      "date": "2026-11-17 17:06",
+      "version": "0.13.26",
+      "date": "2026-11-17 18:24",
       "changes": [
+        "紧急修：find() 自我递归导致一启动就崩（StackOverflowError）",
+        "点播脚本：关键路径写脚本日志，出事不用猜",
+        "runJob：开始/结束各一条（能看出后台任务到底跑没跑起来 —— 上次卡「加载中」就是因为没跑，日志里一看就明白）",
+        "getJson：请求异常/非 2xx 时记下 URL 和状态码",
+        "三个 do*：缺 class 字段 / 缺 list 字段（带 tid、pg）/ 没有可播地址（带 vod_play_url 前 120 字）",
         "修「一直卡在加载中」：refresh/defer 的脚本名根本对不上",
         "ScriptLayerManager 注册图层用的 key 是 \"views/vod-picker.js\"，而 ScriptEngine 里拿的是 File.getName() 即 \"vod-picker.js\"；",
         "refresh→ active.get(\"vod-picker.js\") == null → **什么都不做，也不报错**；",
         "于是脚本里 defer('vdRun') 的后台任务永远不会跑，busy 停在 true，界面就一直转圈；refresh() 同理无效。",
-        "ScriptEngine 增加 sink：reloadSink / deferSink，由 Controller 构造时注入（e.setSinks(this::reload, this::deferJob)）…",
-        "ScriptLayerManager 增加 find()：精确 → \"views/\"+name → endsWith 三级兜底，",
-        "点播首页重做：海报网格（不再是三栏）+ 每个脚本一份日志文件",
-        "UI：三栏 → 海报网格",
-        "全屏压暗 + 顶栏",
-        "分类 chips 横排"
+        "ScriptEngine 增加 sink：reloadSink / deferSink，由 Controller 构造时注入（e.setSinks(this::reload, this::deferJob)）…"
       ]
     }
   ],

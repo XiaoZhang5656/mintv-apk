@@ -1,34 +1,34 @@
 {
-  "versionCode": 582,
-  "versionName": "0.13.26",
-  "date": "2026-11-17 18:24",
+  "versionCode": 583,
+  "versionName": "0.13.27",
+  "date": "2026-11-17 19:07",
   "changes": [
+    "点播 v7 + 框架补 prompt/ctx.screen；修软件层反复切换导致的卡顿",
+    "卡顿：真凶是 setLayerType 一帧切十几次",
+    "框架补两个原语",
+    "ctx.screen = {w,h,density,portrait,ratio}：脚本终于能判断横竖屏，按短边算尺寸，竖屏排版不再歪。",
+    "prompt(title, default, callback)：App 弹原生输入框（AlertDialog + 自动弹键盘），用户确认后回调和 exports[callback]({value})…",
+    "脚本 v7",
     "紧急修：find() 自我递归导致一启动就崩（StackOverflowError）",
     "点播脚本：关键路径写脚本日志，出事不用猜",
     "runJob：开始/结束各一条（能看出后台任务到底跑没跑起来 —— 上次卡「加载中」就是因为没跑，日志里一看就明白）",
-    "getJson：请求异常/非 2xx 时记下 URL 和状态码",
-    "三个 do*：缺 class 字段 / 缺 list 字段（带 tid、pg）/ 没有可播地址（带 vod_play_url 前 120 字）",
-    "修「一直卡在加载中」：refresh/defer 的脚本名根本对不上",
-    "ScriptLayerManager 注册图层用的 key 是 \"views/vod-picker.js\"，而 ScriptEngine 里拿的是 File.getName() 即 \"vod-picker.js\"；",
-    "refresh→ active.get(\"vod-picker.js\") == null → **什么都不做，也不报错**；",
-    "于是脚本里 defer('vdRun') 的后台任务永远不会跑，busy 停在 true，界面就一直转圈；refresh() 同理无效。",
-    "ScriptEngine 增加 sink：reloadSink / deferSink，由 Controller 构造时注入（e.setSinks(this::reload, this::deferJob)）…"
+    "getJson：请求异常/非 2xx 时记下 URL 和状态码"
   ],
   "history": [
     {
-      "version": "0.13.26",
-      "date": "2026-11-17 18:24",
+      "version": "0.13.27",
+      "date": "2026-11-17 19:07",
       "changes": [
+        "点播 v7 + 框架补 prompt/ctx.screen；修软件层反复切换导致的卡顿",
+        "卡顿：真凶是 setLayerType 一帧切十几次",
+        "框架补两个原语",
+        "ctx.screen = {w,h,density,portrait,ratio}：脚本终于能判断横竖屏，按短边算尺寸，竖屏排版不再歪。",
+        "prompt(title, default, callback)：App 弹原生输入框（AlertDialog + 自动弹键盘），用户确认后回调和 exports[callback]({value})…",
+        "脚本 v7",
         "紧急修：find() 自我递归导致一启动就崩（StackOverflowError）",
         "点播脚本：关键路径写脚本日志，出事不用猜",
         "runJob：开始/结束各一条（能看出后台任务到底跑没跑起来 —— 上次卡「加载中」就是因为没跑，日志里一看就明白）",
-        "getJson：请求异常/非 2xx 时记下 URL 和状态码",
-        "三个 do*：缺 class 字段 / 缺 list 字段（带 tid、pg）/ 没有可播地址（带 vod_play_url 前 120 字）",
-        "修「一直卡在加载中」：refresh/defer 的脚本名根本对不上",
-        "ScriptLayerManager 注册图层用的 key 是 \"views/vod-picker.js\"，而 ScriptEngine 里拿的是 File.getName() 即 \"vod-picker.js\"；",
-        "refresh→ active.get(\"vod-picker.js\") == null → **什么都不做，也不报错**；",
-        "于是脚本里 defer('vdRun') 的后台任务永远不会跑，busy 停在 true，界面就一直转圈；refresh() 同理无效。",
-        "ScriptEngine 增加 sink：reloadSink / deferSink，由 Controller 构造时注入（e.setSinks(this::reload, this::deferJob)）…"
+        "getJson：请求异常/非 2xx 时记下 URL 和状态码"
       ]
     }
   ],

@@ -1,34 +1,34 @@
 {
-  "versionCode": 579,
-  "versionName": "0.13.23",
-  "date": "2026-11-17 16:32",
+  "versionCode": 580,
+  "versionName": "0.13.24",
+  "date": "2026-11-17 16:47",
   "changes": [
+    "点播首页重做：海报网格（不再是三栏）+ 每个脚本一份日志文件",
+    "UI：三栏 → 海报网格",
+    "全屏压暗 + 顶栏",
+    "分类 chips 横排",
+    "6 × 3 海报墙，16:9 缩略图 + 右上角 4K/HD/更新至N集 角标",
+    "焦点：外发光 + 片名下方紫线",
     "示例脚本 v4：加版本戳；顺带说明旧版为什么\"面板透明/数据不渲染\"",
     "面板上方右侧画版本戳（vod-picker v4 / tvbox v4）—— 截图就能确认装的是哪一版。",
     "前面几轮已经修掉的：bg 填充、Response 用法、capture、行 id、栏宽按面板内容宽算、文字显式左对齐、详情页独占一屏、defer 异步加载。",
-    "给图元加\"静默失败\"体检：rect 只写 fg 会明确报出来",
-    "ScriptLayerController：layer 解析出 spec 后跑一遍 lintItems()，发现 rect/button/input 只设了 fg 没有 bg/gradient 时…",
-    "没有 id 的图元本来也会被 hitTest 跳过，这条先不做重复提示（drawList 那类装饰图元本来就不需要 id，误报率高）。",
-    "讲清「内置的是运行库，不是 spider.jar」；jar 缓存加剪枝",
-    "docs/TVBox-jar支持.md 开头加了对照表：· spider.jar = 每个配置自己的爬虫实现，按 URL 下载、按 md5 缓存、多份共存；· 运行库（catvod.crawler…",
-    "SpiderBridge.fetch：下载成功后就剪枝，本地最多留 6 份 spider（按最后修改时间淘汰最旧的）。用户来回换配置时，十几个 jar 就是几十 MB，盒子 /data 本来就紧；6 份足够命中…",
-    "升 0.13.22 (578)：为镜像仓库兜底 + 内置 jar 运行库的首个可测版"
+    "给图元加\"静默失败\"体检：rect 只写 fg 会明确报出来"
   ],
   "history": [
     {
-      "version": "0.13.23",
-      "date": "2026-11-17 16:32",
+      "version": "0.13.24",
+      "date": "2026-11-17 16:47",
       "changes": [
+        "点播首页重做：海报网格（不再是三栏）+ 每个脚本一份日志文件",
+        "UI：三栏 → 海报网格",
+        "全屏压暗 + 顶栏",
+        "分类 chips 横排",
+        "6 × 3 海报墙，16:9 缩略图 + 右上角 4K/HD/更新至N集 角标",
+        "焦点：外发光 + 片名下方紫线",
         "示例脚本 v4：加版本戳；顺带说明旧版为什么\"面板透明/数据不渲染\"",
         "面板上方右侧画版本戳（vod-picker v4 / tvbox v4）—— 截图就能确认装的是哪一版。",
         "前面几轮已经修掉的：bg 填充、Response 用法、capture、行 id、栏宽按面板内容宽算、文字显式左对齐、详情页独占一屏、defer 异步加载。",
-        "给图元加\"静默失败\"体检：rect 只写 fg 会明确报出来",
-        "ScriptLayerController：layer 解析出 spec 后跑一遍 lintItems()，发现 rect/button/input 只设了 fg 没有 bg/gradient 时…",
-        "没有 id 的图元本来也会被 hitTest 跳过，这条先不做重复提示（drawList 那类装饰图元本来就不需要 id，误报率高）。",
-        "讲清「内置的是运行库，不是 spider.jar」；jar 缓存加剪枝",
-        "docs/TVBox-jar支持.md 开头加了对照表：· spider.jar = 每个配置自己的爬虫实现，按 URL 下载、按 md5 缓存、多份共存；· 运行库（catvod.crawler…",
-        "SpiderBridge.fetch：下载成功后就剪枝，本地最多留 6 份 spider（按最后修改时间淘汰最旧的）。用户来回换配置时，十几个 jar 就是几十 MB，盒子 /data 本来就紧；6 份足够命中…",
-        "升 0.13.22 (578)：为镜像仓库兜底 + 内置 jar 运行库的首个可测版"
+        "给图元加\"静默失败\"体检：rect 只写 fg 会明确报出来"
       ]
     }
   ],

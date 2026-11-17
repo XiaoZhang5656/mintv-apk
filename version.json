@@ -1,8 +1,36 @@
 {
   "versionCode": 576,
   "versionName": "0.13.20",
-  "date": "",
-  "changes": [],
-  "history": [],
+  "date": "2026-11-17 14:08",
+  "changes": [
+    "CI 串行化 + 更新日志不再为空",
+    "build.yml 加 concurrency：同时推多个 commit 时会有多个 job 一起走到",
+    "gen_version.py：标题里没版本号的 commit 以前直接丢掉，导致 public/version.json",
+    "图层 API 补上真正的 pad；修 ellipsize 在宽度为 0 时画出框外；去掉没实现的 maxLines",
+    ".pad(n) 之前只是往 o.pad 里写值，LayerParser 和渲染层都不认，脚本设了等于没设。",
+    ".maxLines(n) 同一批加进来的，但渲染层只有单行文字（多行要改 StaticLayout 布局），",
+    "ellipsize(maxW<=0) 原来 return s，即把整段文字画到框外面（pad 给大一点就会触发）。",
+    "ellipsize 缓存 key 从 s.hashCode() 改成字符串本身：两条不同标题撞 hashCode",
+    "修 ScriptLog 被旧版覆盖导致整包编译失败；日志加长度上限；颜色数值不再溢出",
+    "ScriptLog.java 被回写成旧的「每脚本一个日志文件」实现，丢掉了页面日志用的"
+  ],
+  "history": [
+    {
+      "version": "0.13.20",
+      "date": "2026-11-17 14:08",
+      "changes": [
+        "CI 串行化 + 更新日志不再为空",
+        "build.yml 加 concurrency：同时推多个 commit 时会有多个 job 一起走到",
+        "gen_version.py：标题里没版本号的 commit 以前直接丢掉，导致 public/version.json",
+        "图层 API 补上真正的 pad；修 ellipsize 在宽度为 0 时画出框外；去掉没实现的 maxLines",
+        ".pad(n) 之前只是往 o.pad 里写值，LayerParser 和渲染层都不认，脚本设了等于没设。",
+        ".maxLines(n) 同一批加进来的，但渲染层只有单行文字（多行要改 StaticLayout 布局），",
+        "ellipsize(maxW<=0) 原来 return s，即把整段文字画到框外面（pad 给大一点就会触发）。",
+        "ellipsize 缓存 key 从 s.hashCode() 改成字符串本身：两条不同标题撞 hashCode",
+        "修 ScriptLog 被旧版覆盖导致整包编译失败；日志加长度上限；颜色数值不再溢出",
+        "ScriptLog.java 被回写成旧的「每脚本一个日志文件」实现，丢掉了页面日志用的"
+      ]
+    }
+  ],
   "apk": "https://raw.githubusercontent.com/XiaoZhang5656/mintv-apk/main/app-armeabi-v7a.apk"
 }

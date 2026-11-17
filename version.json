@@ -1,34 +1,34 @@
 {
-  "versionCode": 590,
-  "versionName": "0.13.34",
-  "date": "2026-11-18 07:15",
+  "versionCode": 592,
+  "versionName": "0.13.36",
+  "date": "2026-11-18 07:37",
   "changes": [
-    "框架自检：脚本出问题自己报（0.13.34）",
-    "ScriptLayerController.lintItems 重写：收集 id 表/矩形表，做重复、越界、遮挡判断；问题按\"脚本+文案\"去重，定时重绘不刷屏",
-    "ScriptEngine.Result 加 costMs / stateGets 两个诊断字段，__stateGet 里计数，invoke 结束时填",
-    "阈值 100ms / 12 次是拿实测数据定的",
-    "docs/框架自检.md 说明怎么看、怎么改",
-    "— 面板里什么都点不到（0.13.33）",
-    "授权目录整目录递归同步 + 关闭按钮挪到左上角（0.13.32）",
-    "syncFromStorage 改成整目录递归",
-    "关闭按钮挪到左上角",
-    "sys-monitor 的 2 秒 tick 不影响别的层"
+    "— 修\"面板里点不动\"的真凶（0.13.36）",
+    "每帧 layer() 200~300ms，CPU 打满",
+    "更致命的是：重绘过程中 hitItems/hitRects 被清空重建，用户这时候点下去，hitTest 拿到的是空数组 → 怎么点都没反应",
+    "加 /api/items：把屏幕上实际画出来的图元（含像素坐标）导出来（0.13.35）",
+    "ScriptLayerView.dumpItemsJson()：遍历 hitItems/hitRects，输出像素矩形（这两个数组就是 onDraw 实际用的，所以和屏幕完全一致）",
+    "ScriptLayerManager.dumpItems()：汇总所有图层，带上 script 名",
+    "RemoteServer：加 /api/items 路由，走已有的 Host 接口",
+    "MainActivity：itemsJson() 用 CountDownLatch 把请求线程切到主线程算（布局必须在主线程），1.5 秒超时",
+    "阈值从 12 次调到 30 次 —— 一次快照本来就是 20 次左右，12 会一直误报",
+    "框架自检：脚本出问题自己报（0.13.34）"
   ],
   "history": [
     {
-      "version": "0.13.34",
-      "date": "2026-11-18 07:15",
+      "version": "0.13.36",
+      "date": "2026-11-18 07:37",
       "changes": [
-        "框架自检：脚本出问题自己报（0.13.34）",
-        "ScriptLayerController.lintItems 重写：收集 id 表/矩形表，做重复、越界、遮挡判断；问题按\"脚本+文案\"去重，定时重绘不刷屏",
-        "ScriptEngine.Result 加 costMs / stateGets 两个诊断字段，__stateGet 里计数，invoke 结束时填",
-        "阈值 100ms / 12 次是拿实测数据定的",
-        "docs/框架自检.md 说明怎么看、怎么改",
-        "— 面板里什么都点不到（0.13.33）",
-        "授权目录整目录递归同步 + 关闭按钮挪到左上角（0.13.32）",
-        "syncFromStorage 改成整目录递归",
-        "关闭按钮挪到左上角",
-        "sys-monitor 的 2 秒 tick 不影响别的层"
+        "— 修\"面板里点不动\"的真凶（0.13.36）",
+        "每帧 layer() 200~300ms，CPU 打满",
+        "更致命的是：重绘过程中 hitItems/hitRects 被清空重建，用户这时候点下去，hitTest 拿到的是空数组 → 怎么点都没反应",
+        "加 /api/items：把屏幕上实际画出来的图元（含像素坐标）导出来（0.13.35）",
+        "ScriptLayerView.dumpItemsJson()：遍历 hitItems/hitRects，输出像素矩形（这两个数组就是 onDraw 实际用的，所以和屏幕完全一致）",
+        "ScriptLayerManager.dumpItems()：汇总所有图层，带上 script 名",
+        "RemoteServer：加 /api/items 路由，走已有的 Host 接口",
+        "MainActivity：itemsJson() 用 CountDownLatch 把请求线程切到主线程算（布局必须在主线程），1.5 秒超时",
+        "阈值从 12 次调到 30 次 —— 一次快照本来就是 20 次左右，12 会一直误报",
+        "框架自检：脚本出问题自己报（0.13.34）"
       ]
     }
   ],

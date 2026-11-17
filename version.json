@@ -1,34 +1,34 @@
 {
   "versionCode": 576,
   "versionName": "0.13.20",
-  "date": "2026-11-17 14:14",
+  "date": "2026-11-17 14:26",
   "changes": [
+    "SDK 支持 https：mbedTLS + 302 跟随；构建脚本收进 sdk/build.sh",
+    "新增 src/tls.c / tls.h：mbedTLS 薄封装（握手 + 收发 + 系统 CA）。CA 读 /apex/com.android…",
+    "http_client.c 抽出传输层（hc_conn + conn_send/recv），明文和 TLS共用一套请求拼装、chunked 解码、大小上限。没定义 MINTV_TLS 时行为和以前完全一致…",
+    "顺手补上 301/302/303/307/308 跟随（最多 4 跳）。源站几乎全是「GET /live.m3u8 → 302 到 CDN」，而且经常顺手换成 https，不跟就只能拿到那个 302…",
+    "新增 src/tls.h 之外的东西都是新增文件：sdk/build.sh（取代 workflow里那两段手抄的 clang 命令）和 sdk/test/test_https.c（自测）。",
+    "build.sh：有 third_party/mbedtls 就带 -DMINTV_TLS，没有就编 http-only，",
     "更新日志：续行拼回、代码片段过滤、超长在标点处截断",
     "缩进行若不像代码，拼回上一条要点；空行断开；",
     "单条超过 110 字在最近的标点处截断加省略号。\u0000",
-    "CI 串行化 + 更新日志不再为空",
-    "build.yml 加 concurrency：同时推多个 commit 时会有多个 job 一起走到「Mirror APK to public repo」…",
-    "gen_version.py：标题里没版本号的 commit 以前直接丢掉，导致 public/version.json的 changes/history 一直是空数组（客户端「检测更新」弹出来什么说明都没有，0.13…",
-    "图层 API 补上真正的 pad；修 ellipsize 在宽度为 0 时画出框外；去掉没实现的 maxLines",
-    ".pad(n) 之前只是往 o.pad 里写值，LayerParser 和渲染层都不认，脚本设了等于没设。现在 LayerSpec.Item 加 pad 字段、LayerParser 透传…",
-    ".maxLines(n) 同一批加进来的，但渲染层只有单行文字（多行要改 StaticLayout 布局），留着就是个假的 API。这个版本还没发布过（0.13.20 编译就没过），直接删掉更干净。",
-    "ellipsize(maxW<=0) 原来 return s，即把整段文字画到框外面（pad 给大一点就会触发）。改成返回空串，同时把它前面那句 measureText 提前，避免每帧白算。"
+    "CI 串行化 + 更新日志不再为空"
   ],
   "history": [
     {
       "version": "0.13.20",
-      "date": "2026-11-17 14:14",
+      "date": "2026-11-17 14:26",
       "changes": [
+        "SDK 支持 https：mbedTLS + 302 跟随；构建脚本收进 sdk/build.sh",
+        "新增 src/tls.c / tls.h：mbedTLS 薄封装（握手 + 收发 + 系统 CA）。CA 读 /apex/com.android…",
+        "http_client.c 抽出传输层（hc_conn + conn_send/recv），明文和 TLS共用一套请求拼装、chunked 解码、大小上限。没定义 MINTV_TLS 时行为和以前完全一致…",
+        "顺手补上 301/302/303/307/308 跟随（最多 4 跳）。源站几乎全是「GET /live.m3u8 → 302 到 CDN」，而且经常顺手换成 https，不跟就只能拿到那个 302…",
+        "新增 src/tls.h 之外的东西都是新增文件：sdk/build.sh（取代 workflow里那两段手抄的 clang 命令）和 sdk/test/test_https.c（自测）。",
+        "build.sh：有 third_party/mbedtls 就带 -DMINTV_TLS，没有就编 http-only，",
         "更新日志：续行拼回、代码片段过滤、超长在标点处截断",
         "缩进行若不像代码，拼回上一条要点；空行断开；",
         "单条超过 110 字在最近的标点处截断加省略号。\u0000",
-        "CI 串行化 + 更新日志不再为空",
-        "build.yml 加 concurrency：同时推多个 commit 时会有多个 job 一起走到「Mirror APK to public repo」…",
-        "gen_version.py：标题里没版本号的 commit 以前直接丢掉，导致 public/version.json的 changes/history 一直是空数组（客户端「检测更新」弹出来什么说明都没有，0.13…",
-        "图层 API 补上真正的 pad；修 ellipsize 在宽度为 0 时画出框外；去掉没实现的 maxLines",
-        ".pad(n) 之前只是往 o.pad 里写值，LayerParser 和渲染层都不认，脚本设了等于没设。现在 LayerSpec.Item 加 pad 字段、LayerParser 透传…",
-        ".maxLines(n) 同一批加进来的，但渲染层只有单行文字（多行要改 StaticLayout 布局），留着就是个假的 API。这个版本还没发布过（0.13.20 编译就没过），直接删掉更干净。",
-        "ellipsize(maxW<=0) 原来 return s，即把整段文字画到框外面（pad 给大一点就会触发）。改成返回空串，同时把它前面那句 measureText 提前，避免每帧白算。"
+        "CI 串行化 + 更新日志不再为空"
       ]
     }
   ],

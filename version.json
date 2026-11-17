@@ -1,34 +1,34 @@
 {
-  "versionCode": 583,
-  "versionName": "0.13.27",
-  "date": "2026-11-17 19:07",
+  "versionCode": 585,
+  "versionName": "0.13.29",
+  "date": "2026-11-17 19:56",
   "changes": [
+    "补齐频道增删改查原语；抽公共写入实现；点播整组替换 + 自动播放",
+    "增删改查补齐",
+    "appendChannels(group, items)          追加，同名（name 完全相同）替换",
+    "updateChannel(group, name, patch)     改单条：patch 只写要改的字段",
+    "removeChannels(group, namePrefix)     删：按名字前缀（剧名删整部），不传前缀 = 清空该分组",
+    "MainActivity 抽 writeGroup",
     "点播 v7 + 框架补 prompt/ctx.screen；修软件层反复切换导致的卡顿",
     "卡顿：真凶是 setLayerType 一帧切十几次",
     "框架补两个原语",
-    "ctx.screen = {w,h,density,portrait,ratio}：脚本终于能判断横竖屏，按短边算尺寸，竖屏排版不再歪。",
-    "prompt(title, default, callback)：App 弹原生输入框（AlertDialog + 自动弹键盘），用户确认后回调和 exports[callback]({value})…",
-    "脚本 v7",
-    "紧急修：find() 自我递归导致一启动就崩（StackOverflowError）",
-    "点播脚本：关键路径写脚本日志，出事不用猜",
-    "runJob：开始/结束各一条（能看出后台任务到底跑没跑起来 —— 上次卡「加载中」就是因为没跑，日志里一看就明白）",
-    "getJson：请求异常/非 2xx 时记下 URL 和状态码"
+    "ctx.screen = {w,h,density,portrait,ratio}：脚本终于能判断横竖屏，按短边算尺寸，竖屏排版不再歪。"
   ],
   "history": [
     {
-      "version": "0.13.27",
-      "date": "2026-11-17 19:07",
+      "version": "0.13.29",
+      "date": "2026-11-17 19:56",
       "changes": [
+        "补齐频道增删改查原语；抽公共写入实现；点播整组替换 + 自动播放",
+        "增删改查补齐",
+        "appendChannels(group, items)          追加，同名（name 完全相同）替换",
+        "updateChannel(group, name, patch)     改单条：patch 只写要改的字段",
+        "removeChannels(group, namePrefix)     删：按名字前缀（剧名删整部），不传前缀 = 清空该分组",
+        "MainActivity 抽 writeGroup",
         "点播 v7 + 框架补 prompt/ctx.screen；修软件层反复切换导致的卡顿",
         "卡顿：真凶是 setLayerType 一帧切十几次",
         "框架补两个原语",
-        "ctx.screen = {w,h,density,portrait,ratio}：脚本终于能判断横竖屏，按短边算尺寸，竖屏排版不再歪。",
-        "prompt(title, default, callback)：App 弹原生输入框（AlertDialog + 自动弹键盘），用户确认后回调和 exports[callback]({value})…",
-        "脚本 v7",
-        "紧急修：find() 自我递归导致一启动就崩（StackOverflowError）",
-        "点播脚本：关键路径写脚本日志，出事不用猜",
-        "runJob：开始/结束各一条（能看出后台任务到底跑没跑起来 —— 上次卡「加载中」就是因为没跑，日志里一看就明白）",
-        "getJson：请求异常/非 2xx 时记下 URL 和状态码"
+        "ctx.screen = {w,h,density,portrait,ratio}：脚本终于能判断横竖屏，按短边算尺寸，竖屏排版不再歪。"
       ]
     }
   ],

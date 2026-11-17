@@ -1,34 +1,34 @@
 {
-  "versionCode": 576,
-  "versionName": "0.13.20",
-  "date": "2026-11-17 15:19",
+  "versionCode": 577,
+  "versionName": "0.13.21",
+  "date": "2026-11-17 15:26",
   "changes": [
+    "升版本到 0.13.21 (577)",
+    "脚本框架：频道/分类/EPG 宿主 API、pushList、defer 异步、image 构造器坐标修复",
+    "TVBox spider.jar 加载器",
+    "示例脚本：tvbox.js（三栏 + 详情页 + 选集 + 加载中）、vod-picker.js 修复",
+    "文档：脚本开发指南 + starter.js 模板",
     "补文档：脚本开发指南 + 模板 starter.js + 文档索引",
     "docs/脚本开发指南.md：心智模型（layer 是纯渲染、3 秒超时、state 驱动）、图元速查、五个必踩的坑（bg vs fg、id、默认居中、radius 单位、image 参数）…",
     "sample-scripts/views/starter.js：130 行带注释的最小完整例子（浮球 → 面板 → 虚拟列表 → 遥控导航 → defer 异步拉数据），复制改名即可开工。",
     "docs/README.md：按\"我想干什么\"索引。",
-    "TVBox 面板：详情页返回上一页、剧集网格按行跳",
-    "详情页独立按键语义：← → 选一格、↑ ↓ 按行跳（±8，和 8 列网格对齐）、OK 播放并推送、BACK/MENU 退出详情回列表。详情页里其它键一律吃掉，不再漏给播放器。",
-    "backToList() 只清 detail，不动 col / selSite / selCls / selVod / scroll ——用户从哪部片进来，退回就停在哪部片上，不用重新翻。",
-    "推送成功后也走 backToList（面板不关）：刚推完一般还想接着挑下一部，关面板等于让人重新点球、重新翻栏。",
-    "打开/关闭面板时清掉 detail，避免下次一进来就落在上次的剧集页。",
-    "底栏提示按层级切换：列表「← → 换栏 … BACK 关闭」/ 详情「← → 选集 ↑ ↓ 翻行"
+    "TVBox 面板：详情页返回上一页、剧集网格按行跳"
   ],
   "history": [
     {
-      "version": "0.13.20",
-      "date": "2026-11-17 15:19",
+      "version": "0.13.21",
+      "date": "2026-11-17 15:26",
       "changes": [
+        "升版本到 0.13.21 (577)",
+        "脚本框架：频道/分类/EPG 宿主 API、pushList、defer 异步、image 构造器坐标修复",
+        "TVBox spider.jar 加载器",
+        "示例脚本：tvbox.js（三栏 + 详情页 + 选集 + 加载中）、vod-picker.js 修复",
+        "文档：脚本开发指南 + starter.js 模板",
         "补文档：脚本开发指南 + 模板 starter.js + 文档索引",
         "docs/脚本开发指南.md：心智模型（layer 是纯渲染、3 秒超时、state 驱动）、图元速查、五个必踩的坑（bg vs fg、id、默认居中、radius 单位、image 参数）…",
         "sample-scripts/views/starter.js：130 行带注释的最小完整例子（浮球 → 面板 → 虚拟列表 → 遥控导航 → defer 异步拉数据），复制改名即可开工。",
         "docs/README.md：按\"我想干什么\"索引。",
-        "TVBox 面板：详情页返回上一页、剧集网格按行跳",
-        "详情页独立按键语义：← → 选一格、↑ ↓ 按行跳（±8，和 8 列网格对齐）、OK 播放并推送、BACK/MENU 退出详情回列表。详情页里其它键一律吃掉，不再漏给播放器。",
-        "backToList() 只清 detail，不动 col / selSite / selCls / selVod / scroll ——用户从哪部片进来，退回就停在哪部片上，不用重新翻。",
-        "推送成功后也走 backToList（面板不关）：刚推完一般还想接着挑下一部，关面板等于让人重新点球、重新翻栏。",
-        "打开/关闭面板时清掉 detail，避免下次一进来就落在上次的剧集页。",
-        "底栏提示按层级切换：列表「← → 换栏 … BACK 关闭」/ 详情「← → 选集 ↑ ↓ 翻行"
+        "TVBox 面板：详情页返回上一页、剧集网格按行跳"
       ]
     }
   ],

@@ -1,34 +1,34 @@
 {
   "versionCode": 576,
   "versionName": "0.13.20",
-  "date": "2026-11-17 14:26",
+  "date": "2026-11-17 14:55",
   "changes": [
-    "SDK 支持 https：mbedTLS + 302 跟随；构建脚本收进 sdk/build.sh",
-    "新增 src/tls.c / tls.h：mbedTLS 薄封装（握手 + 收发 + 系统 CA）。CA 读 /apex/com.android…",
-    "http_client.c 抽出传输层（hc_conn + conn_send/recv），明文和 TLS共用一套请求拼装、chunked 解码、大小上限。没定义 MINTV_TLS 时行为和以前完全一致…",
-    "顺手补上 301/302/303/307/308 跟随（最多 4 跳）。源站几乎全是「GET /live.m3u8 → 302 到 CDN」，而且经常顺手换成 https，不跟就只能拿到那个 302…",
-    "新增 src/tls.h 之外的东西都是新增文件：sdk/build.sh（取代 workflow里那两段手抄的 clang 命令）和 sdk/test/test_https.c（自测）。",
-    "build.sh：有 third_party/mbedtls 就带 -DMINTV_TLS，没有就编 http-only，",
-    "更新日志：续行拼回、代码片段过滤、超长在标点处截断",
-    "缩进行若不像代码，拼回上一条要点；空行断开；",
-    "单条超过 110 字在最近的标点处截断加省略号。\u0000",
-    "CI 串行化 + 更新日志不再为空"
+    "补上 MainActivity 的宿主实现（上一次漏推，CI 编译失败）",
+    "channelsJson 从当前显示的 channels 列表取，index 和 playChannel(int) 同一坐标系…",
+    "setGroup / playInGroup 全部 ui.post：改分类要动 View 和焦点引擎，从脚本线程直接调会崩。",
+    "epg 直接读 OSD 已经算好的 epgNowText / epgNextText，不重复查表。",
+    "扩展脚本框架：频道/分类/EPG API、TVBox spider.jar 加载器、修示例脚本",
+    "框架：脚本现在能操作频道列表",
+    "新增宿主能力：channels(group, offset, limit) / channelCount / groups /group / setGroup / channel / epg / playInGroup…",
+    "channels 默认一次最多 500 条、上限 2000：2000 个台一次转 JSON 有几百 KB，塞进 QuickJS 里会卡，所以分页是第一等参数而不是补丁。",
+    "setGroup 走 ui.post（改分类要动 View + 焦点引擎，必须主线程）。",
+    "框架：TVBox spider.jar 加载器"
   ],
   "history": [
     {
       "version": "0.13.20",
-      "date": "2026-11-17 14:26",
+      "date": "2026-11-17 14:55",
       "changes": [
-        "SDK 支持 https：mbedTLS + 302 跟随；构建脚本收进 sdk/build.sh",
-        "新增 src/tls.c / tls.h：mbedTLS 薄封装（握手 + 收发 + 系统 CA）。CA 读 /apex/com.android…",
-        "http_client.c 抽出传输层（hc_conn + conn_send/recv），明文和 TLS共用一套请求拼装、chunked 解码、大小上限。没定义 MINTV_TLS 时行为和以前完全一致…",
-        "顺手补上 301/302/303/307/308 跟随（最多 4 跳）。源站几乎全是「GET /live.m3u8 → 302 到 CDN」，而且经常顺手换成 https，不跟就只能拿到那个 302…",
-        "新增 src/tls.h 之外的东西都是新增文件：sdk/build.sh（取代 workflow里那两段手抄的 clang 命令）和 sdk/test/test_https.c（自测）。",
-        "build.sh：有 third_party/mbedtls 就带 -DMINTV_TLS，没有就编 http-only，",
-        "更新日志：续行拼回、代码片段过滤、超长在标点处截断",
-        "缩进行若不像代码，拼回上一条要点；空行断开；",
-        "单条超过 110 字在最近的标点处截断加省略号。\u0000",
-        "CI 串行化 + 更新日志不再为空"
+        "补上 MainActivity 的宿主实现（上一次漏推，CI 编译失败）",
+        "channelsJson 从当前显示的 channels 列表取，index 和 playChannel(int) 同一坐标系…",
+        "setGroup / playInGroup 全部 ui.post：改分类要动 View 和焦点引擎，从脚本线程直接调会崩。",
+        "epg 直接读 OSD 已经算好的 epgNowText / epgNextText，不重复查表。",
+        "扩展脚本框架：频道/分类/EPG API、TVBox spider.jar 加载器、修示例脚本",
+        "框架：脚本现在能操作频道列表",
+        "新增宿主能力：channels(group, offset, limit) / channelCount / groups /group / setGroup / channel / epg / playInGroup…",
+        "channels 默认一次最多 500 条、上限 2000：2000 个台一次转 JSON 有几百 KB，塞进 QuickJS 里会卡，所以分页是第一等参数而不是补丁。",
+        "setGroup 走 ui.post（改分类要动 View + 焦点引擎，必须主线程）。",
+        "框架：TVBox spider.jar 加载器"
       ]
     }
   ],

@@ -1,34 +1,34 @@
 {
-  "versionCode": 577,
-  "versionName": "0.13.21",
-  "date": "2026-11-17 16:00",
+  "versionCode": 578,
+  "versionName": "0.13.22",
+  "date": "2026-11-17 16:14",
   "changes": [
+    "升 0.13.22 (578)：为镜像仓库兜底 + 内置 jar 运行库的首个可测版",
+    "修一次\"莫名其妙的红\"",
+    "这一版是\"内置 catvod 运行库\"的首个可测包",
+    "com.github.catvod.crawler.Spider / SpiderDebug",
+    "com.github.catvod.debug.* 三个空实现占位",
+    "okhttp 3.12.13 + gson 2.10.1",
     "修 release 日志检查：给 okhttp 的 1 处 android.util.Log 开配额",
     "内置 catvod 运行库，让 jar 站点真能跑（接口型站点已闭环）",
     "com.github.catvod.crawler.Spider：init(Context)/init(Context,String)/homeContent/categoryContent/detailContent/…",
-    "com.github.catvod.crawler.SpiderDebug：log(String)/log(Throwable)。",
-    "com.github.catvod.debug.{MainActivity,DanmakuDialogTestActivity,DmghgProbeActivity}：只有 spider/merge/** 会回调…",
-    "okhttp 3.12.13",
-    "gson 2.10.1",
-    "升版本到 0.13.21 (577)",
-    "脚本框架：频道/分类/EPG 宿主 API、pushList、defer 异步、image 构造器坐标修复",
-    "TVBox spider.jar 加载器"
+    "com.github.catvod.crawler.SpiderDebug：log(String)/log(Throwable)。"
   ],
   "history": [
     {
-      "version": "0.13.21",
-      "date": "2026-11-17 16:00",
+      "version": "0.13.22",
+      "date": "2026-11-17 16:14",
       "changes": [
+        "升 0.13.22 (578)：为镜像仓库兜底 + 内置 jar 运行库的首个可测版",
+        "修一次\"莫名其妙的红\"",
+        "这一版是\"内置 catvod 运行库\"的首个可测包",
+        "com.github.catvod.crawler.Spider / SpiderDebug",
+        "com.github.catvod.debug.* 三个空实现占位",
+        "okhttp 3.12.13 + gson 2.10.1",
         "修 release 日志检查：给 okhttp 的 1 处 android.util.Log 开配额",
         "内置 catvod 运行库，让 jar 站点真能跑（接口型站点已闭环）",
         "com.github.catvod.crawler.Spider：init(Context)/init(Context,String)/homeContent/categoryContent/detailContent/…",
-        "com.github.catvod.crawler.SpiderDebug：log(String)/log(Throwable)。",
-        "com.github.catvod.debug.{MainActivity,DanmakuDialogTestActivity,DmghgProbeActivity}：只有 spider/merge/** 会回调…",
-        "okhttp 3.12.13",
-        "gson 2.10.1",
-        "升版本到 0.13.21 (577)",
-        "脚本框架：频道/分类/EPG 宿主 API、pushList、defer 异步、image 构造器坐标修复",
-        "TVBox spider.jar 加载器"
+        "com.github.catvod.crawler.SpiderDebug：log(String)/log(Throwable)。"
       ]
     }
   ],

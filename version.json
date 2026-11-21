@@ -1,34 +1,34 @@
 {
   "versionCode": 600,
   "versionName": "0.13.44",
-  "date": "2026-11-20 12:02",
+  "date": "2026-11-21 11:41",
   "changes": [
-    "fix: 脚本的 ctx.screen 必须真的送到 JS（0.13.45）",
-    "fix(ci): 大 APK 走 git push，不再撞 API 体积上限",
-    "fix: 脚本图层尺寸单位与可见性（0.13.45）",
-    "ScriptLayerView.drawText 字号乘 density，与输入框统一单位（480dpi 上同一个 size 差 3 倍：输入框 66px、文字 22px）",
-    "resolveRect 缺省高度/文字宽度按像素计算：size=22 的缺省图元从 44px(14.7dp) 变成 132px(44dp)，文字不再溢出热区",
-    "setSpec 可见性：空 spec 之后、非模态→模态时强制采纳脚本声明的visible，修「脚本在跑、日志有输出、图层就是不显示」",
-    "ScriptLayerManager.viewSize() 没有图层时回退到容器尺寸，不再退回可能过期的 DisplayMetrics",
-    "drawImage 支持 fit=cover",
+    "Refactor View lifecycle and SOCKS5 proxy support\u0000",
     "紧急修：buildEventContext 自我递归导致一开面板就崩（0.13.44）",
-    "日志双写 + 视图尺寸诊断（0.13.43）"
+    "日志双写 + 视图尺寸诊断（0.13.43）",
+    "日志双写",
+    "私有目录 files/log/*.log  —— 每次实时写（毫秒级），调试读这里",
+    "授权目录 <存储根>/log/*.log —— 每 10 秒最多同步一次，内容一样只是晚几秒；用户在文件管理器里照样能看到",
+    "视图尺寸诊断",
+    "脚本日志写盘改异步线程 + 清掉脚本调试日志（0.13.42）",
+    "框架性能五轮：自检短路 / hitTest 数组 / 日志写盘计时（0.13.41）",
+    "框架性能四轮：图元类型 int 化 / onDraw 数组遍历（0.13.40）"
   ],
   "history": [
     {
       "version": "0.13.44",
-      "date": "2026-11-20 12:02",
+      "date": "2026-11-21 11:41",
       "changes": [
-        "fix: 脚本的 ctx.screen 必须真的送到 JS（0.13.45）",
-        "fix(ci): 大 APK 走 git push，不再撞 API 体积上限",
-        "fix: 脚本图层尺寸单位与可见性（0.13.45）",
-        "ScriptLayerView.drawText 字号乘 density，与输入框统一单位（480dpi 上同一个 size 差 3 倍：输入框 66px、文字 22px）",
-        "resolveRect 缺省高度/文字宽度按像素计算：size=22 的缺省图元从 44px(14.7dp) 变成 132px(44dp)，文字不再溢出热区",
-        "setSpec 可见性：空 spec 之后、非模态→模态时强制采纳脚本声明的visible，修「脚本在跑、日志有输出、图层就是不显示」",
-        "ScriptLayerManager.viewSize() 没有图层时回退到容器尺寸，不再退回可能过期的 DisplayMetrics",
-        "drawImage 支持 fit=cover",
+        "Refactor View lifecycle and SOCKS5 proxy support\u0000",
         "紧急修：buildEventContext 自我递归导致一开面板就崩（0.13.44）",
-        "日志双写 + 视图尺寸诊断（0.13.43）"
+        "日志双写 + 视图尺寸诊断（0.13.43）",
+        "日志双写",
+        "私有目录 files/log/*.log  —— 每次实时写（毫秒级），调试读这里",
+        "授权目录 <存储根>/log/*.log —— 每 10 秒最多同步一次，内容一样只是晚几秒；用户在文件管理器里照样能看到",
+        "视图尺寸诊断",
+        "脚本日志写盘改异步线程 + 清掉脚本调试日志（0.13.42）",
+        "框架性能五轮：自检短路 / hitTest 数组 / 日志写盘计时（0.13.41）",
+        "框架性能四轮：图元类型 int 化 / onDraw 数组遍历（0.13.40）"
       ]
     }
   ],

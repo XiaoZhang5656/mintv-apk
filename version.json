@@ -1,8 +1,9 @@
 {
-  "versionCode": 601,
-  "versionName": "0.13.45",
-  "date": "2026-11-21 13:39",
+  "versionCode": 602,
+  "versionName": "0.13.46",
+  "date": "2026-11-21 17:44",
   "changes": [
+    "level media policy\u0000",
     "build: bump version to 0.13.45 (601)\u0000",
     "Refactor View lifecycle and SOCKS5 proxy support\u0000",
     "紧急修：buildEventContext 自我递归导致一开面板就崩（0.13.44）",
@@ -11,14 +12,14 @@
     "私有目录 files/log/*.log  —— 每次实时写（毫秒级），调试读这里",
     "授权目录 <存储根>/log/*.log —— 每 10 秒最多同步一次，内容一样只是晚几秒；用户在文件管理器里照样能看到",
     "视图尺寸诊断",
-    "脚本日志写盘改异步线程 + 清掉脚本调试日志（0.13.42）",
-    "框架性能五轮：自检短路 / hitTest 数组 / 日志写盘计时（0.13.41）"
+    "脚本日志写盘改异步线程 + 清掉脚本调试日志（0.13.42）"
   ],
   "history": [
     {
-      "version": "0.13.45",
-      "date": "2026-11-21 13:39",
+      "version": "0.13.46",
+      "date": "2026-11-21 17:44",
       "changes": [
+        "level media policy\u0000",
         "build: bump version to 0.13.45 (601)\u0000",
         "Refactor View lifecycle and SOCKS5 proxy support\u0000",
         "紧急修：buildEventContext 自我递归导致一开面板就崩（0.13.44）",
@@ -27,8 +28,7 @@
         "私有目录 files/log/*.log  —— 每次实时写（毫秒级），调试读这里",
         "授权目录 <存储根>/log/*.log —— 每 10 秒最多同步一次，内容一样只是晚几秒；用户在文件管理器里照样能看到",
         "视图尺寸诊断",
-        "脚本日志写盘改异步线程 + 清掉脚本调试日志（0.13.42）",
-        "框架性能五轮：自检短路 / hitTest 数组 / 日志写盘计时（0.13.41）"
+        "脚本日志写盘改异步线程 + 清掉脚本调试日志（0.13.42）"
       ]
     }
   ],

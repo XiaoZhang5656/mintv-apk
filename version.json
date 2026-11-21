@@ -1,7 +1,7 @@
 {
-  "versionCode": 603,
-  "versionName": "0.13.47",
-  "date": "2026-11-21 18:39",
+  "versionCode": 605,
+  "versionName": "0.13.49",
+  "date": "2026-11-21 19:08",
   "changes": [
     "level media policy\u0000",
     "build: bump version to 0.13.45 (601)\u0000",
@@ -16,8 +16,8 @@
   ],
   "history": [
     {
-      "version": "0.13.47",
-      "date": "2026-11-21 18:39",
+      "version": "0.13.49",
+      "date": "2026-11-21 19:08",
       "changes": [
         "level media policy\u0000",
         "build: bump version to 0.13.45 (601)\u0000",
